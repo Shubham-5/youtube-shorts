@@ -1,0 +1,99 @@
+.video_player {
+  @apply h-screen object-cover;
+}
+
+.video {
+  @apply flex snap-center h-full relative rounded-xl overflow-hidden;
+  aspect-ratio: 9 / 16;
+  max-width: calc(100vw - 2.5rem);
+}
+
+.video_actions {
+  @apply absolute top-0 left-0 right-0 p-2 flex items-center justify-between gap-4;
+
+  button {
+    @apply rounded-full  w-10 h-10 flex items-center justify-center text-[--light-color] transition;
+
+    &:hover {
+      background: rgb(var(--light-color) / 0.25);
+    }
+    svg {
+      @apply w-6 h-6;
+    }
+  }
+}
+
+.video_container {
+  @apply flex items-center justify-center gap-4 w-screen;
+  height: calc(100vh - 2rem);
+}
+
+.video_details {
+  @apply absolute bottom-0 left-0 flex flex-col justify-end gap-3;
+  padding: 0 3rem 1rem 1rem;
+  p {
+    @apply text-sm text-ellipsis line-clamp-2;
+    color: rgb(var(--light-color));
+  }
+}
+
+.video_creator_details {
+  @apply flex items-center gap-2;
+
+  img {
+    @apply w-10 h-10 rounded-full object-cover;
+  }
+
+  button {
+    @apply rounded-xl bg-white text-black transition text-sm px-2 py-1;
+    &:hover {
+      background: rgb(var(--light-color) / 0.25);
+    }
+  }
+}
+
+.buttons {
+  @apply absolute bottom-0 right-0 py-8 px-1 flex flex-col gap-4;
+
+  button {
+    @apply rounded-full p-3 bg-gray-700/70;
+  }
+
+  & > div {
+    & span {
+      display: block;
+      font-size: 0.75rem;
+      color: rgb(var(--light-color));
+      text-align: center;
+    }
+    &.like {
+      & button.liked {
+        color: rgb(var(--like-color));
+      }
+    }
+    &.dislike {
+      & button.disliked {
+        color: rgb(var(--primary-color));
+      }
+    }
+  }
+}
+
+.progress_container {
+  @apply w-full bg-gray-300 rounded-full h-1 mb-4 dark:bg-gray-300;
+
+  .progress_bar {
+    @apply bg-red-500 h-1 rounded-full dark:bg-red-500;
+  }
+}
+
+.scroll_actions {
+  @apply hidden md:flex flex-col justify-between h-full float-right;
+
+  button {
+    @apply rounded-full p-4 bg-gray-700/50;
+    &:hover {
+      background: rgb(var(--light-color) / 0.25);
+    }
+  }
+}

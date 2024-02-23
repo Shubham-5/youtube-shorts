@@ -1,0 +1,8 @@
+.container {
+  @apply grid place-content-center min-h-screen;
+
+  .video_list {
+    @apply grid place-items-center overflow-y-auto snap-y snap-mandatory snap-start gap-4 mt-4;
+    max-height: calc(100vh + 1rem);
+  }
+}
